@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Memory Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ffb6c1,#ffe4f2);
+}
+
+/* FIREWORKS */
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    animation: boom 3s infinite;
+    opacity:0;
+}
+
+@keyframes boom{
+    0%{transform:scale(0); opacity:1;}
+    50%{opacity:1;}
+    100%{transform:scale(18); opacity:0;}
+}
+
+/* MAIN CONTAINER */
+.container{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CENTER TEXT */
+.text-box{
+    text-align:center;
+    color:white;
+    max-width:300px;
+    z-index:2;
+    animation: fadeIn 2s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeIn{
+    0%{opacity:0; transform:translateY(30px);}
+    100%{opacity:1; transform:translateY(0);}
+}
+
+.text-box h1{
+    text-shadow:0 0 10px #ff4da6;
+    margin-bottom:10px;
+}
+
+.text-box p{
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* IMAGES */
+.img{
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-radius:15px;
+    object-fit:cover;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    opacity:0;
+    animation: pop 1s forwards;
+}
+
+/* pop animation */
+@keyframes pop{
+    0%{transform:scale(0);}
+    100%{transform:scale(1); opacity:1;}
+}
+
+/* POSITION KELILING TEXT */
+.img1{ top:12%; left:45%; animation-delay:0.3s;}
+.img2{ top:35%; left:75%; animation-delay:0.6s;}
+.img3{ top:70%; left:55%; animation-delay:0.9s;}
+.img4{ top:70%; left:25%; animation-delay:1.2s;}
+.img5{ top:35%; left:10%; animation-delay:1.5s;}
+
+/* MOBILE */
+@media(max-width:600px){
+    .img{
+        width:60px;
+        height:60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIREWORK BACKGROUND -->
+<div class="firework" style="top:10%; left:20%;"></div>
+<div class="firework" style="top:30%; left:80%; animation-delay:0.5s;"></div>
+<div class="firework" style="top:60%; left:10%; animation-delay:1s;"></div>
+<div class="firework" style="top:80%; left:70%; animation-delay:1.5s;"></div>
+<div class="firework" style="top:40%; left:50%; animation-delay:2s;"></div>
+
+<div class="container">
+
+    <!-- 5 IMAGES FROM PC -->
+    <img class="img img1" src="m1.jpg">
+    <img class="img img2" src="m2.jpg">
+    <img class="img img3" src="m3.jpg">
+    <img class="img img4" src="m4.jpg">
+    <img class="img img5" src="m5.jpg">
+
+    <!-- CENTER TEXT -->
+    <div class="text-box">
+        <h1>💖 RANDOM 💖</h1>
+        <p>
+            Saya tak tau nak buat apa tengah tunggu bola lawan so saya buat website ni. Nanti saya buat lagi cantik sebab ni malas ii punya hehe 💕<br><br>
+            Pandai kan saya buat ni. Saya buat sendiri guna coding so hati ii bila-bila je saya bole hack awak luke 💌
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

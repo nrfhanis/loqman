@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Question</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffb6c1,#ff69b4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* BOX */
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    width:300px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* GAMBAR PROFILE */
+.profile{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #ff1493;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+h2{
+    color:#ff1493;
+    margin-bottom:20px;
+}
+
+/* BUTTON YES */
+#yesBtn{
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transform:scale(1);
+    transition:0.3s;
+}
+
+/* BUTTON NO */
+#noBtn{
+    background:#ff4fa3;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- GAMBAR AWAK -->
+    <img src="g1.jpeg" class="profile">
+
+    <!-- SOALAN -->
+    <h2>Sayang saya tak? 💖</h2>
+
+    <!-- BUTTON -->
+    <button id="yesBtn" onclick="goNext()">YES</button>
+    <button id="noBtn" onclick="growYes()">NO</button>
+
+</div>
+
+<script>
+let noCount = 0;
+
+function growYes(){
+    noCount++;
+
+    let yesBtn = document.getElementById("yesBtn");
+
+    // YES makin besar bila tekan NO
+    let scale = 1 + (noCount * 0.5);
+
+    yesBtn.style.transform = `scale(${scale})`;
+}
+
+function goNext(){
+    window.location.href = "f2.html";
+}
+</script>
+
+</body>
+</html>
